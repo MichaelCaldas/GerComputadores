@@ -3,19 +3,16 @@ Created on 12/02/2011
 
 @author: Karolyne
 '''
+from ArmazenaUsuario import ArmazenaUsuario
+
 class Usuario():
-    def __init__(self, nomeGuerra, senha):
-      self.nomeGuerra = nomeGuerra
-      self.senha = senha  
-        
-    def setNomeGuerra(self, nomeGuerra):
-        self.nomeGuerra = nomeGuerra
-        
-    def getNomeGuerra(self):
-        return self.nomeGuerra
+    todosUsuarios = []
     
-    def setSenha(self, senha):
+    def __init__(self, nomeGuerra, senha):
+        self.nomeGuerra = nomeGuerra
         self.senha = senha
+        #ArmazenaUsuario(self)
+        self.armazenaUsuarios(self)
         
-    def getSenha(self):
-        return self.senha
+    def armazenaUsuarios(self, usuario):
+        self.todosUsuarios.append(usuario)
