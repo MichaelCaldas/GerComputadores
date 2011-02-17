@@ -10,7 +10,12 @@ from Servidor import Servidor
 class Teste_Servidor(unittest.TestCase):
     
     def testeAdicionaUmServidor(self):
-        self.servidor = Servidor(200, 10)
+        self.servidor = Servidor("001", "Servidor Unix", 500, 4, 200, 10)
+        self.servidor.codPatrimonio |should| equal_to("001")
+        self.servidor.descricao |should| equal_to("Servidor Unix")
+        self.servidor.hd |should| equal_to(500)
+        self.servidor.memoria |should| equal_to(4)
         self.servidor.tamanhoBuffer |should| equal_to(200)
         self.servidor.quantidadeBuffer |should| equal_to(10)
         self.servidor.todosServidores[0].tamanhoBuffer |should| equal_to(200)
+

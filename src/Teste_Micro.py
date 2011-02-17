@@ -18,7 +18,6 @@ class Teste_Micro(unittest.TestCase):
         self.micro.memoria |should| equal_to(4)
         self.micro.todosMicros[0].codPatrimonio |should| equal_to("001")
         
-
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()

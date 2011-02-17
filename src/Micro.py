@@ -3,6 +3,7 @@ Created on 13/02/2011
 
 @author: Michael
 '''
+
 class Micro():  
     todosMicros = []
     

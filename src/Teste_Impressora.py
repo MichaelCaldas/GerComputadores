@@ -11,7 +11,7 @@ import unittest
 class Teste_Impressora(unittest.TestCase):
     
     def testeAdicionaUmaImpressora(self):
-        self.impressora = Impressora("001", "HP 2300", 500, "IBM Server")
+        self.impressora = Impressora("00", "HP 2300", 500, "IBM Server")
         self.impressora.codPatrimonio |should| equal_to("001")
         self.impressora.descricao |should| equal_to("HP 2300")
         self.impressora.velocidade |should| equal_to(500)
