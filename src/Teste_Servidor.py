@@ -18,4 +18,10 @@ class Teste_Servidor(unittest.TestCase):
         self.servidor.tamanhoBuffer |should| equal_to(200)
         self.servidor.quantidadeBuffer |should| equal_to(10)
         self.servidor.todosServidores[0].tamanhoBuffer |should| equal_to(200)
+        self.servidor.armazenaImpressorasConectadas("001")
+        self.servidor.recuperaImpressorasConectadas()[0] |should| equal_to("001")
+    
+#    def testeRecuperaImpressorasConectadas(self):
+#        self.servidor.armazenaImpressorasConectadas("001")
+#        self.servidor.recuperaImpressorasConectadas() |should| equal_to("002")
 

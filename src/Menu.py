@@ -25,7 +25,7 @@ class Menu():
             print "6 - Listar Estacoes"
             print "7 - Listar Servidores"
             print "8 - Listar Impressoras"
-            print "9 - Listar Usuarios"
+            print "9 - Associar Impressoras a um Servidor"
             print "10 - Sair"
             opcao = input("O que deseja fazer: ")
     
@@ -53,11 +53,23 @@ class Menu():
                 quantidadeBuffer = input("Quantidade de Buffer: ")
                 servidor = Servidor(codPatrimonio, descricao, hd, memoria, tamanhoBuffer, quantidadeBuffer)
                 
+                
             if opcao == 4:
                 codPatrimonio = raw_input("Codigo do Patrimonio: ")
                 descricao = raw_input("Descricao: ")
                 velocidade = input("Velocidade: ")
-                impressora = Impressora(codPatrimonio, descricao, velocidade)
+                servidorAux = raw_input("Servidor: ")
+                for i in range(len(servidor.todosServidores)):
+                    if servidorAux == servidor.todosServidores[i].codPatrimonio:
+                        achou = True
+                        impressora = Impressora(codPatrimonio, descricao, velocidade, servidorAux)
+                        break
+                    else:
+                        achou = False
+                if achou == True:
+                    "Impressoa cadastrada com sucesso! \n"
+                else:
+                    "Nao foi possivel cadastrar a impressora, verifique se o servidor foi informado corretamente \n!"
 
             if opcao == 5:
                 for i in range(len(usuario.todosUsuarios)):
@@ -82,6 +94,8 @@ class Menu():
                     print "Memoria: ", servidor.todosServidores[i].memoria
                     print "Tamanho do Buffer: ", servidor.todosServidores[i].tamanhoBuffer
                     print "Quantidade de Buffer: ", servidor.todosServidores[i].quantidadeBuffer
+                    print "Impressoras conectadas: ", servidor.todosServidores[i].recuperaImpressorasConectadas()
+                        
                     print "\n"
             
             if opcao == 8:
@@ -89,5 +103,34 @@ class Menu():
                     print "Codigo: " + impressora.todasImpressoras[i].codPatrimonio
                     print "Descricao: " + impressora.todasImpressoras[i].descricao
                     print "Velocidade: ", impressora.todasImpressoras[i].velocidade
-        
+                    print "Conectada ao Servidor: " + impressora.todasImpressoras[i].servidor
+                    
+            if opcao == 9:
+                cadastrar = raw_input("Deseja cadastrar alguma impressora(s/n): ")
+                
+                if cadastrar == "s":
+                    codImpressora = input("Infome a impressora que deseja cadastrar: ")
+                    for i in range(len(impressora.todasImpressoras)):
+                        if codImpressora == impressora.todasImpressoras[i].codPatrimonio:
+                            achou = True
+                            break
+                        else:
+                            achou = False
+                        if achou == True:
+                            servidorAux = raw_input("Em qual servidor deseja cadastrar a impressora: ")
+                            for i in range(len(servidor.todosServidores)):
+                                if servidorAux == servidor.todosServidores[i].codPatrimonio:
+                                    achou = True
+                                    break
+                                else:
+                                    achou = False
+                                if achou == True:
+                                    servidor.todosServidores[i].armazenaImpressorasConectadas(codImpressora)
+                                    print "Impressora associada com sucesso ao servidor!"
+                                else:
+                                    print "Nao foi possivel associar a impressora ao servidor desejado!"
+                        else:
+                            print "A impressora nao foi localizada!"
+                                      
+                                
 menu = Menu()
