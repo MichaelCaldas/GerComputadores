@@ -1,7 +1,7 @@
 '''
 Created on 16/02/2011
 
-@author: Karol
+@author: Karolyne
 '''
 
 class Impressao():

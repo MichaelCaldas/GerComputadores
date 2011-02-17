@@ -1,7 +1,7 @@
 '''
 Created on 16/02/2011
 
-@author: Karol
+@author: Karolyne
 '''
 from should_dsl.dsl import should
 from should_dsl.matchers import equal_to

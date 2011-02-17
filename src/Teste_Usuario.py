@@ -7,7 +7,6 @@ from should_dsl.dsl import should
 from should_dsl.matchers import be, equal_to
 import unittest
 from Usuario import Usuario
-from ArmazenaUsuario import ArmazenaUsuario
 
 class Teste_Usuario(unittest.TestCase):
 

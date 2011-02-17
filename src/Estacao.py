@@ -1,14 +1,14 @@
 '''
 Created on 16/02/2011
 
-@author: Karol
+@author: Karolyne
 '''
 from Micro import Micro
 
 class Estacao(Micro):
     todasEstacoes = []
-    def __init__(self, micro, localizacao):
-        self.micro = micro
+    def __init__(self, codPatrimonio, descricao, hd, memoria, localizacao):
+        Micro.__init__(self, codPatrimonio, descricao, hd, memoria)
         self.localizacao = localizacao
         self.armazenaEstacoes(self)
         
