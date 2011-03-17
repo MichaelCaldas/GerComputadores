@@ -14,7 +14,13 @@ class Teste_Usuario(unittest.TestCase):
         self.usuario = Usuario("Michael", 123456)
         self.usuario.nomeGuerra |should| equal_to("Michael")
         self.usuario.senha |should| equal_to(123456)
-        self.usuario.todosUsuarios[0].nomeGuerra |should| equal_to("Michael")       
+        #self.usuario.todosUsuarios[0].nomeGuerra |should| equal_to("Michael")  
+        
+    def testaArmazenaUsuarios(self):
+        #self.usuario = Usuario("Michael", 123456)
+        self.testeAdicionaUmUsuario()
+        self.usuario.todosUsuarios[0].nomeGuerra |should| equal_to("Michael")
+        self.usuario.todosUsuarios[0].senha |should| equal_to(123456)
 
 
 if __name__ == "__main__":

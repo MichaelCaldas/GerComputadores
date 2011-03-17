@@ -11,6 +11,7 @@ class Usuario():
         self.nomeGuerra = nomeGuerra
         self.senha = senha
         self.armazenaUsuarios(self)
+        #self.cadastraUsuarios()
         
     def armazenaUsuarios(self, usuario):
         self.todosUsuarios.append(usuario)
