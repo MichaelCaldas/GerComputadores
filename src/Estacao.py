@@ -3,6 +3,7 @@ Created on 16/02/2011
 
 @author: Karolyne
 '''
+
 from Micro import Micro
 from DataHoraAtual import dataHoraAtual
 

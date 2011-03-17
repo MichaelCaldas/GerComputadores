@@ -9,7 +9,6 @@ from should_dsl.dsl import should, should_not
 from should_dsl.matchers import equal_to
 import unittest
 
-
 class Teste_Estacao(unittest.TestCase):
     
     def testeAdicionaUmaEstacao(self):

@@ -3,7 +3,6 @@ Created on 12/02/2011
 
 @author: Karolyne
 '''
-
 class Usuario():
     todosUsuarios = []
     
